@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from aplikacjaogloszeniowa.models import Kategoria, Ogloszenie
+
+admin.site.register(Kategoria)
+admin.site.register(Ogloszenie)
