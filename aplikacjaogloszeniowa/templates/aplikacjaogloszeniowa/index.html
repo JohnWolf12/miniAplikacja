@@ -1,0 +1,9 @@
+{% extends "aplikacjaogloszeniowa/base.html" %}
+
+{% block title %}Strona główna{% endblock %}
+
+{% block content %}
+    <div class="container px-4 mb-5 mt-4">
+        <a class="btn btn-outline-secondary btn-lg mb-4" href="{% url 'dodanieOgloszenia' %}">Stwórz nowe ogłoszenie</a>
+    </div>
+{% endblock %}
