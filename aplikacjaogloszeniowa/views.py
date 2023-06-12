@@ -94,3 +94,18 @@ def announcement_view(request, id):
         'ogloszenie': ogloszenie
     }
     return render(request, 'aplikacjaogloszeniowa/announcement.html', context)
+
+
+def editAnnouncement_view(request, id):
+    ogloszenie = get_object_or_404(Ogloszenie, pk=id)
+    if request.method == 'POST':
+        editannouncementform = AnnouncementForm(request.POST, instance=ogloszenie)
+        if editannouncementform.is_valid():
+            editannouncementform.save()
+            return redirect("/")
+    else:
+        editannouncementform = AnnouncementForm(instance=ogloszenie)
+    context = {
+        'editannouncementform': editannouncementform
+    }
+    return render(request, 'aplikacjaogloszeniowa/announcementEdit.html', context)
