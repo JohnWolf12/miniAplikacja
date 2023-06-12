@@ -109,3 +109,8 @@ def editAnnouncement_view(request, id):
         'editannouncementform': editannouncementform
     }
     return render(request, 'aplikacjaogloszeniowa/announcementEdit.html', context)
+
+
+def deleteAnnouncement_view(request, id):
+    Ogloszenie.objects.filter(id=id).delete()
+    return redirect('/')
