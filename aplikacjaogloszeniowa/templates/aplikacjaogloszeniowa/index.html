@@ -55,7 +55,8 @@
                             </div>
                             <div class="col col-12 align-self-end text-end">
                                 <a class="edytowanie h5 px-3" href="/edycjaogloszenia/{{ogloszenie.id}}">Edytuj</a>
-                                <a class="usuwanie h5 px-3" href="#">Usuń</a>
+                                <a class="usuwanie h5 px-3" href="/usuniecieogloszenia/{{ogloszenie.id}}"
+                                onclick="return confirm('Czy na pewno chcesz usunąć ogłoszenie o nazwie \'{{ ogloszenie.nazwa }}\'')">Usuń</a>
                             </div>
                         </div>
                     </div>
