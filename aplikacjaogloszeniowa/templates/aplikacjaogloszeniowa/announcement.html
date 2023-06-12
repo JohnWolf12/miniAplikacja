@@ -1,0 +1,21 @@
+{% extends "aplikacjaogloszeniowa/base.html" %}
+
+{% block title %}Ogłoszenie{% endblock %}
+
+{% block content %}
+    <div class="container px-4 mb-5 mt-4">
+        <div class="ogloszenie card shadow mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col align-self-start">
+                        <p class="h3">{{ ogloszenie.nazwa }}</p>
+                        <p class="text-muted h4">Cena: {{ ogloszenie.cena }} zł</p>
+                        <p class="h4">Opis:</p>
+                        <p class="h5" align="justify">{% if ogloszenie.opis %}{{ ogloszenie.opis|linebreaksbr }}
+                        {% else %}-{% endif %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
