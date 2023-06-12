@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from aplikacjaogloszeniowa.forms import AnnouncementForm
 from aplikacjaogloszeniowa.models import Kategoria, Ogloszenie
@@ -86,3 +86,11 @@ def addAnnouncement_view(request):
         'addannouncementform': addannouncementform
     }
     return render(request, 'aplikacjaogloszeniowa/announcementAdd.html', context)
+
+
+def announcement_view(request, id):
+    ogloszenie = get_object_or_404(Ogloszenie, pk=id)
+    context = {
+        'ogloszenie': ogloszenie
+    }
+    return render(request, 'aplikacjaogloszeniowa/announcement.html', context)
